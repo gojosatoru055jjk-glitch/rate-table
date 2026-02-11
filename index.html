@@ -69,7 +69,33 @@
 
         .header-pair { text-align: left; padding-left: 65px; }
         .header-rate { text-align: right; padding-right: 40px; }
+                /* Style cho nút bấm */
+        .fullscreen-btn {
+            padding: 50px 70px;
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: fixed;
+            left: 10%;
+            opacity: 0;
+            transition: ease-in-out 0.5s ;
+        }
 
+        .fullscreen-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .fullscreen-btn:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body>
@@ -86,7 +112,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>
+                <td>    
                     <div class="currency-pair">
                         <img src="https://flagcdn.com/us.svg" class="flag" alt="USD">
                         USD/EUR
@@ -142,6 +168,33 @@
         </tbody>
     </table>
 </div>
+
+    <button id="toggleBtn" class="fullscreen-btn">Full Screen</button>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        toggleBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Nếu chưa ở chế độ toàn màn hình, hãy bật nó lên
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Lỗi: Không thể bật chế độ toàn màn hình (${err.message})`);
+                });
+                toggleBtn.innerText = "Exit";
+            } else {
+                // Nếu đang ở chế độ toàn màn hình, hãy thoát ra
+                document.exitFullscreen();
+                toggleBtn.innerText = "Full screen";
+            }
+        });
+
+        // Lắng nghe sự kiện thay đổi trạng thái màn hình để cập nhật chữ trên nút
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                toggleBtn.innerText = "Full screen";
+            }
+        });
+    </script>
 
 </body>
 </html>
