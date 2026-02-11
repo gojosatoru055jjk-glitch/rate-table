@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            font-size: 20px;
+            padding: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .currency-pair {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .flag {
+            width: 50px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .rate {
+            text-align: right;
+            font-size: 22px;
+            font-weight: 500;
+            padding-right: 40px;
+        }
+
+        .header-pair { text-align: left; padding-left: 65px; }
+        .header-rate { text-align: right; padding-right: 40px; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>How to Calculate Currency Exchange</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th class="header-pair">Currency Pair</th>
+                <th class="header-rate">Exchange Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="currency-pair">
+                        <img src="https://flagcdn.com/us.svg" class="flag" alt="USD">
+                        USD/EUR
+                    </div>
+                </td>
+                <td class="rate">0,92</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="currency-pair">
+                        <img src="https://flagcdn.com/gb.svg" class="flag" alt="GBP">
+                        GBP/USD
+                    </div>
+                </td>
+                <td class="rate">1,24</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="currency-pair">
+                        <img src="https://flagcdn.com/eu.svg" class="flag" alt="EUR">
+                        EUR/JPY
+                    </div>
+                </td>
+                <td class="rate">162,45</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="currency-pair">
+                        <img src="https://flagcdn.com/ca.svg" class="flag" alt="CAD">
+                        USD/CAD
+                    </div>
+                </td>
+                <td class="rate">1,36</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="currency-pair">
+                        <img src="https://flagcdn.com/au.svg" class="flag" alt="AUD">
+                        AUD/CHF
+                    </div>
+                </td>
+                <td class="rate">0,59</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="currency-pair">
+                        <img src="https://flagcdn.com/jp.svg" class="flag" alt="JPY">
+                        USD/JPY
+                    </div>
+                </td>
+                <td class="rate">148,8</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
